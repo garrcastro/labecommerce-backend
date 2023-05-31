@@ -1,6 +1,12 @@
-import {users, products} from './database'
-console.log('funciona')
+import {users, products, createUser, getAllUsers, searchProductsByName} from './database'
+//console.log('funciona')
 
-console.log(users)
 
-console.log(products)
+//console.log(products)
+
+//createUser('001','Gabriel','garrcastro@gmail.com','1234')
+
+//getAllUsers()
+
+
+console.log(searchProductsByName('monitor'))

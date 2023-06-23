@@ -27,3 +27,31 @@ VALUES ('prod001', 'Mouse Gamer', '250', 'Melhor mouse do mercado!', 'https://pi
 ('prod003', 'SSD', '150', 'SSD 512 Gb', 'https://picsum.photos/seed/Monitor/400'),
 ('prod004', 'Processador', '1150', 'AMD Ryzen 5', 'https://picsum.photos/seed/Monitor/400'),
 ('prod005', 'Placa-mãe', '600', 'Aorus B450M', 'https://picsum.photos/seed/Monitor/400');
+
+SELECT * FROM users;
+
+SELECT * FROM products;
+
+SELECT * FROM products
+WHERE name LIKE '%gamer%';
+
+INSERT INTO users (id, name, email, password, created_at)
+VALUES ('u004', 'Vince', 'vin@email.com', 'vin123', 'new Date().toISOString()');
+
+INSERT INTO products (id, name, price, description, image_url)
+VALUES ('prod006', 'Cooler', '100', 'Coolermaster Typhoon 3', 'https://picsum.photos/seed/Monitor/400');
+
+DELETE FROM users
+WHERE id='u001';
+
+DELETE FROM products
+WHERE id='prod003';
+
+UPDATE products
+SET 
+id ='prod007',
+name ='CoolerMaster',
+price ='120',
+description ='Coolermaster Typhoon 3 New Edition',
+image_url='https://picsum.photos/seed/Mouse%20gamer/400'
+WHERE id='prod006';

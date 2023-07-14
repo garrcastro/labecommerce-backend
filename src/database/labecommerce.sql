@@ -100,9 +100,6 @@ CREATE TABLE purchases_products(
     ON DELETE CASCADE
 );
 
-DROP TABLE purchases_products;
-
-SELECT * FROM purchases_products;
 
 INSERT INTO purchases_products (purchase_id, product_id, quantity)
 VALUES

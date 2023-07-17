@@ -87,3 +87,37 @@ SELECT purchases.id AS purchase_id, purchases.buyer AS buyer_id, users.name AS b
 FROM users
 JOIN purchases ON users.id = purchases.buyer
 WHERE users.id = 'u004'; 
+
+CREATE TABLE purchases_products(
+    purchase_id TEXT NOT NULL,
+    product_id TEXT NOT NULL,
+    quantity INTEGER NOT NULL,
+    FOREIGN KEY (purchase_id) REFERENCES purchases (id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+    FOREIGN KEY (product_id) REFERENCES products (id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+);
+
+
+INSERT INTO purchases_products (purchase_id, product_id, quantity)
+VALUES
+("pur001", "prod001", 1),
+('pur002',"prod003", 2),
+('pur004', 'prod002',5);
+
+SELECT 
+    purchases.id AS purchase_Id,
+    purchases.buyer AS purchase_Buyer,
+    purchases.total_price,
+    products.id as product_Id,
+    products.name as product_Name,
+    products.description,
+    products.price
+FROM purchases_products
+INNER JOIN purchases
+ON purchases_products.purchase_id = purchases.id
+INNER JOIN products
+ON purchases_products.product_id = products.id;
+

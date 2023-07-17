@@ -4,13 +4,13 @@ import { TUsers } from '../../types';
 
 export const createUser = async (req: Request, res: Response) => {
     try {
-        const {id, name, email, password, createdAt} = req.body
+        const {id, name, email, password, created_at} = req.body
         const newUser:TUsers = {
             id,
             name,
             email,
             password,
-            createdAt
+            created_at
         }
         if (newUser.id!==undefined){
             if(newUser.id && newUser.id[0]!=="u"){

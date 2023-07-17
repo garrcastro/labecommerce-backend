@@ -6,7 +6,7 @@ export type TUsers = {
     name: string,
     email: string,
     password: string,
-    createdAt: string,
+    created_at: string,
 }
 
 export type TProducts = {
